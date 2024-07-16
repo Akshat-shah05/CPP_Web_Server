@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
+#include <iostream>
 
 namespace HDE 
 {
@@ -15,7 +16,14 @@ namespace HDE
             int connection;
         public:
             SimpleSocket(int domain, int service, int protocol, int port, u_long interface);
-        virtual int network_connection(int sock, struct sockaddr_in address) = 0;
+        virtual int network_connection(int sock, struct sockaddr_in address) = 
+            0;
+        void test_connection(int);
+
+        // getter functions for private
+        struct sockaddr_in get_address();
+        int get_sock();
+        int get_connection();
     };
 }
 
