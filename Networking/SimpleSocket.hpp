@@ -15,7 +15,7 @@ namespace HDE
             int connection;
         public:
             SimpleSocket(int domain, int service, int protocol, int port, u_long interface);
-        virtual int network_connection() = 0;
+        virtual int network_connection(int sock, struct sockaddr_in address) = 0;
     };
 }
 
