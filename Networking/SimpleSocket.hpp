@@ -16,8 +16,12 @@ namespace HDE
             int connection;
         public:
             SimpleSocket(int domain, int service, int protocol, int port, u_long interface);
+
+        // Virutal function to connect to a network
         virtual int network_connection(int sock, struct sockaddr_in address) = 
             0;
+
+        // Function to test socket and connection
         void test_connection(int);
 
         // getter functions for private

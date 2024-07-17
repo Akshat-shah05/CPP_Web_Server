@@ -24,13 +24,15 @@ HDE::SimpleSocket::SimpleSocket(int domain, int service, int protocol, int port,
 
 void HDE::SimpleSocket::test_connection(int item_to_test)
 {
-    // Confirms that the socket exists or returns exit code
+    // Confirms that the socket or connection has been established or returns exit code
     if (item_to_test < 0) 
     {
         perror("Connection Failed");
         exit(EXIT_FAILURE);
     };
 }
+
+// Getter Functions for address, sock and connection
 
 struct sockaddr_in HDE::SimpleSocket::get_address() 
 {
